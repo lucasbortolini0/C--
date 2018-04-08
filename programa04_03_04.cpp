@@ -30,17 +30,17 @@ int main (){
             } 
 			if (frase[i] == 32){
 				if (tamanhoComparacao == tamanhoPalavra){
-        			printf ("A palavra %s est· contida na frase. \n", palavra);
-        			break;
+        				printf ("A palavra %s est√° contida na frase. \n", palavra);
+        				break;
     			} 
-    			// repete o looping, atribuindo 0 ‡ tamanhoComparacao
+    			// repete o looping, atribuindo 0 √† tamanhoComparacao
     			else{
     				tamanhoComparacao = 0;
     			}
 			}       
         }
     }
-    printf ("N„o est·\n");
+    printf ("N√£o est√°\n");
     system ("pause");
     return 0;                    
 }   
