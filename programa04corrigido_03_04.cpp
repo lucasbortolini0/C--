@@ -3,9 +3,12 @@
 #include <string.h>
 #include <ctype.h>
 #include <locale.h>
-int main (){
+#define TRUE 1
+#define FALSE 0
+int main (int argc, char*argv[]){
     int i;
     int j;
+    int achou = FALSE;
     int tamanhoPalavra;
     int tamanhoFrase;
     int tamanhoComparacao;
@@ -23,25 +26,25 @@ int main (){
     tamanhoFrase = strlen(frase);
     tamanhoPalavra = strlen(palavra);
     tamanhoComparacao = 0;
-    for ( i = 0; i <  tamanhoFrase; i++){
-        for (j = 0; j <  tamanhoPalavra; j++){
+    for ( i = 0; achou == FALSE && i < tamanhoFrase; i++){
+        for (j = 0; achou == FALSE && j < tamanhoPalavra; j++){
             if (frase[i] == palavra[j]){
                tamanhoComparacao++;
-            } 
-			if (frase[i] == 32){
-				if (tamanhoComparacao == tamanhoPalavra){
-        			printf ("A palavra %s está contida na frase. \n", palavra);
-        			system ("pause");
-        			return 0;
-    			} 
-    			else{ 
-    				tamanhoComparacao = 0;
-    			}
-			}       
+               if (tamanhoComparacao == tamanhoPalavra){
+               	  achou = TRUE;	
+               }
+        	}
+		}
+	}
+	if(achou == TRUE)
+		{
+	    	printf("\n  EstÃ¡ contida \n");
+        } else {
+    		printf("\n NÃ£o estÃ¡ contida \n");
         }
-    }
-    printf ("Não está\n");
-    system ("pause");
-    return 0;                    
-}   
+		system("pause");
+	   	return 0 ;
+	}                 
+}
+
 
