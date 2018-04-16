@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <locale.h>
-int main (){
+int main (int argc, char*argv[]){
 		int j;
 		int letras;
 		int numeros;
@@ -14,7 +14,6 @@ int main (){
 		setlocale (LC_ALL, "");
 		printf ("Informe a palavra: ");
 		gets (palavra);
-		strlwr (palavra);
 		printf("\n");
 		tamanhoPalavra = strlen (palavra);
 		vogais = 0;
@@ -22,27 +21,27 @@ int main (){
 		numeros = 0;
 		letras = 0;
 		for (j = 0; j < tamanhoPalavra; j++){
-			// Acrescenta o número às vogais
+			// Acrescenta o nÃºmero Ã s vogais
 			if (palavra[j] == 'a' || palavra[j] == 'e' || palavra[j] == 'i' || palavra[j] == 'o' || palavra[j] == 'u'){
 				vogais++;
-			// Acrescenta o número às consoantes	
+			// Acrescenta o nÃºmero Ã s consoantes	
 		    } else {	
 				if (toupper(palavra[j]) != tolower(palavra[j])){
 					consoantes++;
 				}
-  			// Acrescenta o número aos números
+  			// Acrescenta o nÃºmero aos nÃºmeros
 			if (toupper(palavra[j]) == tolower(palavra[j])){
 			numeros++;
 		    } 
 		}
 		}
 		letras = vogais + consoantes;
-		printf ("A quanidade de caractere(s) é: %d\n", tamanhoPalavra);
-		printf ("A quanidade de vogal(is) é: %d\n", vogais);
-		printf ("A quanidade de consoante(s) é: %d\n", consoantes);
-		printf ("A quantidade de número(s) é: %d\n", numeros);
-		printf ("A quantidade de letra(s) é: %d\n", letras);
+		printf ("A quanidade de caractere(s) Ã©: %d\n", tamanhoPalavra);
+		printf ("A quanidade de vogal(is) Ã©: %d\n", vogais);
+		printf ("A quanidade de consoante(s) Ã©: %d\n", consoantes);
+		printf ("A quantidade de nÃºmero(s) e sÃ­mbolo(s) Ã©: %d\n", numeros);
+		printf ("A quantidade de letra(s) Ã©: %d\n", letras);
 		return 0;
-		
 }
+
 
