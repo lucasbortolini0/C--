@@ -3,7 +3,7 @@
 #include <locale.h>
 #include <string.h>
 #include <ctype.h>
-int main (){
+int main (int argc, char*argv[]){
 	int i;
 	int j;
 	int tamanhoFrase;
@@ -15,14 +15,15 @@ int main (){
 	printf ("\n");
 	strlwr (frase);
 	tamanhoFrase = strlen(frase);
-	palavras = 1;
+	palavras = 0;
 	for (i = 0; i <= tamanhoFrase; i++){
-    // se o caractere for um espaço, ele soma um à variável palavra
+    // se o caractere for um espaÃ§o, ele soma um Ã  variÃ¡vel palavra
 		if (frase[i]  ==  ' ') {
 			palavras++;
 		}
 	}
-	printf ("O número de palavras é: %d\n", palavras);
+	palavras++;
+	printf ("O nÃºmero de palavras Ã©: %d\n", palavras);
 	system ("pause");
 	return 0;
 }
