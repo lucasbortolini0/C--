@@ -1,28 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <string.h>
 #include <ctype.h>
-int main (int argc, char *argv[]){
+#include <locale.h>
+int main (int argc, char*argv[]){
     int i;
-    int posicao;
-    int tamanhoFrase;
-    char frase[256];
+    int j;
+    int numero;
+    int numeroAtual;
+    int numeroDaLinha;
     setlocale (LC_ALL, "");
-    printf ("Informe a frase: ");
-    fgets (frase, sizeof(frase), stdin);
-    tamanhoFrase = strlen(frase);
+    printf ("Informe o número: ");
+    scanf ("%d", &numero);
     printf ("\n");
-    for (i = 0, posicao = 0; i <= tamanhoFrase; i++, posicao++){
-    	//  a logica adiciona ao ' ' um elemento a mais
-        if ( frase[posicao] == ' '){
-			posicao++; 
-        }
-	frase[i] = frase[posicao];    
-    }
-    printf ("Frase reformulada: %s", frase);
-    system ("pause");
-    return 0;
+    numeroDaLinha = 0;
+    numeroAtual = 0;
+    for (i = 0; i <= numero; i++){ //Linhas
+        for( j = 0; j <= i; j++ ){ //Números
+              numeroAtual++; 
+              printf ("%d", numeroAtual);
+              if (numeroAtual == numero){
+                 printf ("\n");
+                 system ("pause");
+                 return 0;
+              }       
+        }          
+        printf ("\n");
+    } 
 }
+
 
 
